@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XAd - منصة البث العصرية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1><i class="fas fa-play-circle"></i> XAd</h1>
+                <p>منصة البث العصرية</p>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="#" class="nav-link"><i class="fas fa-film"></i> أفلام</a>
+                <a href="#" class="nav-link"><i class="fas fa-tv"></i> مسلسلات</a>
+                <a href="#" class="nav-link"><i class="fas fa-star"></i> المفضلة</a>
+            </nav>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <h2>ابحث عن فيلم أو مسلسل</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="اكتب اسم الفيلم أو المسلسل...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-options">
+                    <label>
+                        <input type="radio" name="searchType" value="movie" checked>
+                        <span>فيلم</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" value="tv">
+                        <span>مسلسل</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section class="player-section" id="playerSection" style="display: none;">
+            <div class="player-container">
+                <div class="player-header">
+                    <h3 id="currentTitle">عنوان المحتوى</h3>
+                    <div class="player-controls">
+                        <button id="fullscreenBtn"><i class="fas fa-expand"></i></button>
+                        <button id="closeBtn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Source Selector -->
+                <div class="source-selector">
+                    <label>اختر المصدر:</label>
+                    <select id="sourceSelect">
+                        <option value="vidsrc">VidSrc</option>
+                        <option value="embed">Embed.su</option>
+                        <option value="2embed">2Embed</option>
+                        <option value="godrive">GoDrivePlayer</option>
+                        <option value="superembed">SuperEmbed</option>
+                        <option value="vidsrcto">VidSrc.to</option>
+                        <option value="fsapi">FSApi</option>
+                        <option value="curtstream">CurtStream</option>
+                        <option value="moviewp">MovieWP</option>
+                        <option value="apimdb">ApiMDB</option>
+                        <option value="gomo">Gomo</option>
+                        <option value="vidcloud">VidCloud</option>
+                    </select>
+                    <button id="changeSource"><i class="fas fa-sync-alt"></i> تغيير المصدر</button>
+                </div>
+
+                <!-- Episode Selector for TV Shows -->
+                <div class="episode-selector" id="episodeSelector" style="display: none;">
+                    <div class="season-episode">
+                        <label>الموسم:</label>
+                        <select id="seasonSelect">
+                            <option value="1">الموسم 1</option>
+                        </select>
+                        <label>الحلقة:</label>
+                        <select id="episodeSelect">
+                            <option value="1">الحلقة 1</option>
+                        </select>
+                        <button id="loadEpisode"><i class="fas fa-play"></i> تشغيل</button>
+                    </div>
+                </div>
+
+                <!-- Video Player -->
+                <div class="video-container">
+                    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+                    <div class="loading" id="loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>جاري التحميل...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Content -->
+        <section class="popular-section">
+            <h2><i class="fas fa-fire"></i> المحتوى الشائع</h2>
+            <div class="content-grid" id="popularContent">
+                <!-- Popular content will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 XAd - منصة البث العصرية. جميع الحقوق محفوظة.</p>
+            <div class="footer-links">
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">شروط الاستخدام</a>
+                <a href="#">اتصل بنا</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
